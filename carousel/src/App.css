@@ -1,0 +1,59 @@
+.App {
+  /*margin: 100px auto;*/
+  text-align: center;
+}
+
+.App > div {
+  position: relative;
+  margin: 100px auto;
+  /*border: 8px solid rgb(0, 178, 255);*/
+  width: 600px;
+  height: 600px;
+  /*overflow: hidden;*/
+}
+
+img {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: rgb(247, 247, 247);
+  font-family: "Roboto";
+  color: rgb(0, 178, 255);
+  font-size: 20px;
+  transform: translateY(-100px);
+}
+
+.carousel-enter {
+  transition: all 1s ease-in-out;
+  transform: translateX(-150%);
+}
+
+.carousel-enter-active {
+  transform: translateX(-50%);
+}
+
+.carousel-leave {
+  transition: all 1s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.carousel-leave-active {
+  transform: translateX(50%);
+}
+
+.blog-post {
+  border: 2px solid rgb(0, 131, 247);
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.post-comment {
+  border: 2px solid rgb(198, 0, 247);
+  padding: 20px;
+  background-color: rgb(245, 245, 245);
+}
