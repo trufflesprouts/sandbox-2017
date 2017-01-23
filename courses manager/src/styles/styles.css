@@ -1,0 +1,18 @@
+#app {
+  font: 14px 'Hack', sans-serif;
+  min-width: 550px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+a.active {
+  color: rgb(255, 103, 117);
+}
+
+nav {
+  padding-top: 20px;
+}
+
+div h1 {
+  color: rgb(255, 103, 117);
+}

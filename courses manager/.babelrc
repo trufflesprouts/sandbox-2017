@@ -1,0 +1,17 @@
+{
+  "presets": ["react", "es2015"],
+  "plugins": [
+    "transform-class-properties",
+    [
+      "react-intl", {
+        "messagesDir": "./dist/messages",
+        "enforceDescriptions": false
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "presets": ["react-hmre"]
+    }
+  }
+}
