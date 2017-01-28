@@ -1,21 +1,28 @@
 /*
   Fish
+  <Fish />
 */
-import React from 'react'
-import h from '../helpers.js'
 
-const Fish = React.createClass({
-  onButtonClick: function () {
-    let key = this.props.index;
+import React from 'react';
+import h from '../helpers';
+import autobind from 'autobind-decorator';
+
+@autobind
+class Fish extends React.Component {
+  
+  onButtonClick() {
+    console.log("Going to add the fish: ", this.props.index);
+    var key = this.props.index;
     this.props.addToOrder(key);
-  },
-  render: function() {
-    let details = this.props.details;
-    let isAvailable = (details.status === "available" ? true : false);
-    let buttonText = (isAvailable ? 'Add To Order' : 'SOLD OUT!');
+  }
+  
+  render() {
+    var details = this.props.details;
+    var isAvailable = (details.status === 'available' ? true : false);
+    var buttonText = (isAvailable ? 'Add To Order' : 'Sold Out!');
     return (
       <li className="menu-fish">
-        <img src={details.image} alt={details.name}/>
+        <img src={details.image} alt={details.name} />
         <h3 className="fish-name">
           {details.name}
           <span className="price">{h.formatPrice(details.price)}</span>
@@ -23,8 +30,9 @@ const Fish = React.createClass({
         <p>{details.desc}</p>
         <button disabled={!isAvailable} onClick={this.onButtonClick}>{buttonText}</button>
       </li>
-    );
+    )
   }
-});
+};
+
 
 export default Fish;
