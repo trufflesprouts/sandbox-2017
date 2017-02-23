@@ -1,5 +1,7 @@
 import React from 'react'
 import Photo from './Photo.js'
+import Header from './Header.js'
+
 
 const PhotoGrid = React.createClass({
   render() {

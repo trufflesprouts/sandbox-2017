@@ -4,6 +4,76 @@
 
 body
   background offwhite
+  padding 80px 0 100px 0
+
+.topBar
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 60px
+  background-color white
+  border-bottom 1px solid rgba(0,0,0,.0975)
+  text-align center
+  a
+    text-decoration none
+  h2
+    font-family 'billabongregular'
+    font-size 3.5rem
+    font-weight 100
+    margin 9px 0 0 0
+    color black
+
+
+header
+  margin 0 auto
+  max-width 1160px
+  height 300px
+  padding 40px
+  margin-bottom 50px
+  background-color offwhite
+
+.account-ico
+  float left
+  display inline-block
+  position relative
+  z-index 2
+  margin 35px auto
+  width 190px
+  height 190px
+  background-color white
+  border-radius 50%
+  padding-top 83px
+  padding-left 20px
+  padding-right 20px
+  border 1px solid rgba(0,0,0,.0975)
+  // box-shadow 0 10px 20px rgba(0,0,0,0.06)
+
+.bio
+  float left
+  display inline-block
+  width 70%
+  position relative
+  z-index 2
+  margin 0 auto
+  padding 15px 0 0 60px
+
+@media screen and (min-width 1030px)
+  header
+    height 300px
+  .bio
+    // display none
+    width 80%
+    padding 15px 60px 40px 60px
+
+@media screen and (max-width 700px)
+  .account-ico
+    display block
+    float none
+    margin 0 auto
+  .bio
+    display none
+
 
 .photo-grid
   display flex
@@ -15,16 +85,18 @@ body
   flex-basis calc(33.333% - 4rem)
   flex-grow 1
   flex-shrink 0
-  margin 0 2rem 2rem 2rem
+  margin 2rem 2rem 2rem 2rem
   padding 2rem
-  border 1px solid lightgray
+  // border 1px solid lightgray
   background white
-  box-shadow 0 0 0 5px rgba(0,0,0,0.03);
+  // box-shadow 0 0 0 5px rgba(0,0,0,0.03)
+  box-shadow 0 15px 20px rgba(0,0,0,0.03)
   position relative
 
 .single-photo
   @extend .grid-figure
-  max-width 900px
+  max-width 1160px
+  padding 0
   margin 0 auto
   display flex
   background white
@@ -36,11 +108,23 @@ body
     flex 1 0 60%
     max-width 60%
   .comments
+    margin 250px 0 0 25px
+    // margin-top 250px
     flex 1 0 40%
-    max-width 40%
+    max-width 30%
+    height 400px
+    overflow scroll
   .grid-photo
+    position relative
     width 100%
     margin 0
+  figcaption
+    position absolute
+    top 30px
+    right -400px
+    width 350px
+    background-color white
+
 
 .grid-photo
   width calc(100% + 4rem)
@@ -69,8 +153,8 @@ body
   &:hover
     .remove-comment
       opacity 1
- 
-.comment-form 
+
+.comment-form
   input, textarea
     width 100%
     border 0
@@ -83,7 +167,7 @@ body
 
 .grid-photo-wrap
   position relative
-  
+
 .likes-heart
   background url(http://f.cl.ly/items/3Y373q2Q3J3Y1j203n0m/Bitmap-3.png) center no-repeat
   background-size contain
@@ -94,16 +178,16 @@ body
   left 50%
   top 50%
   pointer-events none
-  
 
-/*  
-  Buttons  
+
+/*
+  Buttons
 */
 
 .control-buttons
   display flex
   justify-content space-between
-    
+
 button, .button
   border 2px solid lighten(grey, 90%)
   background none
@@ -127,7 +211,7 @@ button, .button
 .speech-bubble
   size = 1.25rem
   width size * 1.2
-  height size 
+  height size
   background blue
   display inline-block
   border-radius 50%
@@ -143,7 +227,3 @@ button, .button
     border-color: transparent blue transparent transparent
     top 30%
     left 0
-
-  
-  
-
