@@ -1,29 +1,17 @@
 // Import all partials
 @require './_*.styl'
-
+body
+  background #F2E4D0
 
 header.top
   text-align center
+  margin-bottom 20px
   h1
-    font-size 14.4rem
-    line-height 0.7 // this font has a wacky baseline
+    font-size 4rem
     display flex
     justify-content: center;
-    
-    // This is a bunch of goofy CSS to make the logo look decent
-    .ofThe
-      display flex
-      font-size 3rem
-      color orange
-      justify-content: center;
-      align-items: center; 
-      background url('images/anchor.svg') center no-repeat;
-      background-size cover
-      padding 0 1rem
-      .of
-        padding-right 2rem
-        position relative
-        right -0.5rem
+    margin-bottom 3px
+
   h3
     margin 0
     font-size 2rem
@@ -34,23 +22,10 @@ header.top
       background white
       position relative
       z-index 2
+      font-size 1.7rem
       padding-left 1rem
       padding-right 1rem
-    &:before, &:after
-      display block
-      z-index 1
-      background black
-      position absolute
-      width 130%
-      height 1px
-      content ''
-      top 5px
-      margin-left -15%
-    &:after
-      top auto
-      bottom 7px
-      
-  
+
 .catch-of-the-day
   display flex
   height 90vh
@@ -59,27 +34,34 @@ header.top
   margin-top 5vh
   perspective: 1000;
   transform-style preserve-3d
+  background white
+  padding 3rem
+  box-shadow 0px 2rem 4rem rgba(0,0,0,0.1)
   & > *
     flex 1 4 auto
-    padding 2rem
-    border 1rem double lighten(black,10%)
+    padding-top 2rem
     position relative
     background white
     transition all 0.3s
-    box-shadow 0px 5px 5px rgba(0,0,0,0.1)
+    padding-left 2rem
+    box-shadow 0 0 0 1.2rem white, 0 0 0 1.3rem lighten(black,83%), 0 0 0 1.8rem white, 0 0 0 1.9rem lighten(black,83%)
+    margin 0 0rem
     overflow scroll
     &:first-child
       flex-shrink 1 // take 4x the extra room
       flex-basis 50%
+      padding-right 5rem
       transform translateX(50%) rotateY(6deg) translateX(-50%)
     &:nth-child(2)
       transform translateX(-50%) rotateY(-14deg) translateX(50%)
-      border-left 0 
-      border-right 0 
+      border-left 0
+      border-right 0
+      padding-right 5rem
       min-width 300px
     &:last-child
       flex-shrink 1 // take 4x the extra room
       flex-basis 50%
+      padding-right 2rem
       transform translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px)
 
 // Folding Transforms
@@ -114,7 +96,7 @@ ul
 ul.order
   // Default state
   li
-    border-bottom 1px solid black
+    border-bottom 3px solid lighten(black, 97%)
     padding 2rem 0
     display flex
     font-size 1.4rem
@@ -128,30 +110,30 @@ ul.order
       border 0
       display none
       line-height 1
-      padding 0 
+      padding 0
+
     &.total
       font-weight 600
-      border-bottom 3px solid black
-      border-top 3px double black
     &.unavailable
       text-decoration line-through
       background lighten(red, 80%)
     .price
-      font-size 1.2rem    
+      font-size 1.2rem
     span.count
       position relative
       overflow hidden
       float left // only works if it's floated?!
       span
         display inline-block
-        // transition all 0.5s      
+        // transition all 0.5s
 
 .order-title
   text-align center
 
 .fish-edit
   margin-bottom 20px
-  border 2px solid black
+  border-top 1px solid lighten(black, 80%)
+  border-left 1px solid lighten(black, 80%)
   overflow hidden
   display flex
   flex-wrap wrap
@@ -161,8 +143,8 @@ ul.order
     line-height 1
     font-size 1.2rem
     border 0
-    border-bottom 1px solid black
-    border-right 1px solid black
+    border-bottom 1px solid lighten(black, 80%)
+    border-right 1px solid lighten(black, 80%)
     appearance none
     border-radius 0
     background white
@@ -176,19 +158,20 @@ ul.order
   button
     width 100%
     border 0
-    
+    border-bottom 1px solid lighten(black, 80%)
+    border-right 1px solid lighten(black, 80%)
+
 
 // Menu Styles
 .list-of-fish
   border-top 2px solid black
-  border-bottom 1px solid black
+  border-bottom 1px solid lighten(black, 80%)
   padding-top 5px
   margin-top 2rem
   transform translateZ(0);
 
 .menu-fish
-  border-bottom 2px solid black
-  border-top 1px solid black
+  border-top 2px solid lighten(black, 97%)
   padding-bottom 2rem
   padding-top 2rem
   margin-bottom 5px
@@ -196,7 +179,8 @@ ul.order
   overflow hidden
   p
     margin 0
-    font-size 1.8rem
+    font-size 1.4rem
+    padding 1rem 0
   .fish-name
     margin 0
     display flex
@@ -215,9 +199,9 @@ ul.order
 button, input[type=submit]
   text-transform uppercase
   background none
-  border 1px solid black
-  font-weight 600
-  font-size 1.5rem
+  border 1px solid lighten(black, 80%)
+  font-weight 200
+  font-size 1.3rem
   font-family 'Open Sans'
   transition all 0.2s
   position relative
@@ -240,9 +224,9 @@ button, input[type=submit]
     position absolute
     width 100%
     height 0%
-    left 0 
+    left 0
     top 0
-    transition all 0.2s 
+    transition all 0.2s
   &:hover, &:focus
     color white
     outline 0
@@ -255,7 +239,7 @@ button, input[type=submit]
   &.success
     &:after
       background green
-  
+
   &.github, &.facebook, &.twitter
     border 0
     display block
@@ -268,27 +252,28 @@ button, input[type=submit]
     background #82D465
     &:after
       background darken(#82D465, 20%)
-      
+
   &.facebook
     background #3864A3
     &:after
       background darken(#3864A3, 20%)
-      
+
   &.twitter
     background #5EA9DD
     &:after
       background darken(#5EA9DD, 20%)
-      
+
 
 // Store Selector
 .store-selector
   background white
   max-width 500px
-  margin 50px auto
-  padding 2rem
-  border 2px solid black
+  margin 200px auto
+  padding 5rem 3rem
+  box-shadow 0px 2rem 4rem rgba(0,0,0,0.1)
   input
+    margin 5px 0
     width 100%
     &[type="text"]
       text-align center
-      font-size 3rem
+      font-size 2rem
